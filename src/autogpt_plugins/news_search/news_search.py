@@ -32,7 +32,7 @@ class NewsSearch(object):
             list(str): A list of news for the specified category, sorted by relevant.
         """
         result = self.news_api_client.get_everything(
-            language="en", page=1, q=query, sort_by="relevancy"
+            language="en", page=1, q=query, sort_by="relevancy", page_size=10
         )
         return [article["title"] for article in result["articles"]]
 
